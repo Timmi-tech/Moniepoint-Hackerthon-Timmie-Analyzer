@@ -1,0 +1,21 @@
+🔹 **Sales Report** 🔹
+
+📌 Highest Sales Volume in a Day: 2025-09-29 (994 transactions)
+📌 Highest Sales Value in a Day: 2025-09-06 ($26621475.00)
+📌 Most Sold Product ID: 980909 (10876 units sold)
+
+📊 **Top Sales Staff for Each Month:**
+   - 2025-01: Staff ID 2 ($53289677.23)
+   - 2025-02: Staff ID 7 ($42359328.28)
+   - 2025-03: Staff ID 1 ($54464371.81)
+   - 2025-04: Staff ID 2 ($52742048.60)
+   - 2025-05: Staff ID 9 ($46243098.76)
+   - 2025-06: Staff ID 5 ($53433080.93)
+   - 2025-07: Staff ID 5 ($49942369.49)
+   - 2025-08: Staff ID 7 ($57431228.82)
+   - 2025-09: Staff ID 6 ($60500743.02)
+   - 2025-10: Staff ID 2 ($47987264.09)
+   - 2025-11: Staff ID 2 ($47932165.13)
+   - 2025-12: Staff ID 5 ($53554999.68)
+
+⏳ **Busiest Hour of the Day:** 10:00 (22610 transactions)

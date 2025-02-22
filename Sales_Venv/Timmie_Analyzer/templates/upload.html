@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Transactions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">🔹 <strong>Tomiwa Sales Report</strong> 🔹</h2>
+
+        <div class="card p-4 shadow-sm">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="zip_file" class="form-label"><i class="fas fa-file-archive"></i> Choose a ZIP file:</label>
+                    <input class="form-control" type="file" name="zip_file" id="zip_file" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100"><i class="fas fa-upload"></i> Upload</button>
+            </form>
+        </div>
+
+        {% if uploaded_file_name %}
+        <div class="alert alert-info text-center mt-3">
+            <i class="fas fa-file"></i> <strong>Uploaded File:</strong> {{ uploaded_file_name }}
+        </div>
+        {% endif %}
+
+        {% if analytics %}
+        <div class="mt-4">
+            <div class="card p-3 shadow-sm">
+                <h4 class="text-center"><i class="fas fa-chart-line"></i> Sales Summary</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <i class="fas fa-calendar-day"></i> <strong>Highest Sales Volume in a Day:</strong> 
+                        {{ analytics.highest_sales_day }} ({{ analytics.highest_sales_volume }} transactions)
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fas fa-dollar-sign"></i> <strong>Highest Sales Value in a Day:</strong> 
+                        {{ analytics.highest_sales_value_day }} (${{ analytics.highest_sales_value }})
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fas fa-box"></i> <strong>Most Sold Product ID:</strong> 
+                        {{ analytics.most_sold_product }} ({{ analytics.most_sold_quantity }} units sold)
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fas fa-clock"></i> <strong>Busiest Hour of the Day:</strong> 
+                        {{ analytics.busiest_hour }}:00 ({{ analytics.busiest_hour_transactions }} transactions)
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card mt-4 p-3 shadow-sm">
+                <h4 class="text-center"><i class="fas fa-user-tie"></i> Top Sales Staff for Each Month</h4>
+                <ul class="list-group">
+                    {% for month, staff in analytics.top_staff_per_month.items %}
+                        <li class="list-group-item">
+                            <i class="fas fa-calendar-alt"></i> <strong>{{ month }}:</strong> Staff ID {{ staff.0 }} (${{ staff.1 }})
+                        </li>
+                    {% empty %}
+                        <li class="list-group-item">No data available.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
