@@ -70,15 +70,6 @@ python src/Analyze_single_sales.py
 cd web_app
 python manage.py runserver
 
-📊 Sample Output
-
-📌 Highest Sales Volume in a Day: 2025-02-15 (342 transactions)
-📌 Highest Sales Value in a Day: 2025-02-18 ($12,430.50)
-📌 Most Sold Product ID: 101 (543 units sold)
-📊 Top Sales Staff for Each Month:
-   - 2025-02: Staff ID 008 ($3,560.75)
-⏳ Busiest Hour of the Day: 14:00 (87 transactions)
-
 🛠️ Technologies Used
 
 Python for data processing
