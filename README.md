@@ -57,6 +57,7 @@ Adding Features: Supporting .zip file uploads (since Django does not accept fold
 1️⃣ Clone the Repository
 
 git clone https://github.com/Timmi-tech/Moniepoint-Hackerthon-Timmie-Analyzer.git
+
 cd Moniepoint-Hackerthon-Timmie-Analyzer
 
 
